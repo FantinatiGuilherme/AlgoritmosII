@@ -1,0 +1,34 @@
+/******************************************************************************
+
+Guilherme de Oliveira Fantinati
+Crie um programa que leia 6 valores interos.
+Em seguida, mostre os valores em ordem inversa
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    
+    int valor[6], cont;
+    
+    printf("Digite 6 valores:\n");
+    
+    
+        for(cont=0;cont<6;cont++)
+            {
+                scanf("%d", &valor[cont]);
+            }
+            
+            
+    printf("Os valores inversos são:\n");
+    
+    
+        for(cont = 5; cont >= 0; cont--)
+            {
+                printf("%d\n", valor[cont]);
+            }
+
+    return 0;
+}
+
