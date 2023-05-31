@@ -1,0 +1,46 @@
+/******************************************************************************
+
+Guilherme de Oliveira Fantinati 
+Utilização de funções - Soma de numeros Primos
+
+*******************************************************************************/
+#include <stdio.h>
+int somaPrimo( int n );
+int primo( int x );
+
+
+int main()
+{
+    int quant;
+    
+    printf("Digite a quantidade de numeros para somar : ");
+    scanf("%d", &quant);
+    
+    somaPrimo(quant);
+
+    
+}
+
+int somaPrimo(int n){
+
+    int soma = 0, aux = 1;
+    
+    
+    while(n > 0){
+    if(primo(1)) { 
+    soma += aux;
+    n--;
+    }
+    aux++;
+    
+    return soma;
+        
+    }
+
+int primo ( int n ){
+    ret = 1;
+    for(int i = 2 to x)
+    
+    
+}
+}
