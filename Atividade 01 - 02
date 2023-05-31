@@ -1,0 +1,33 @@
+/******************************************************************************
+
+Guilherme de Oliveira Fantinati
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+
+    int eleitores, nulos, brancos, validos;
+    
+    printf("Digite o Total de eleitores: ");
+    scanf("%d", &eleitores );
+    
+    
+    printf("Digite o Total de votos Nulos: ");
+    scanf("%d", &nulos );
+    
+    printf("Digite o Total de votos Brancos: ");
+    scanf("%d", &brancos );
+    
+    validos = eleitores - nulos - brancos;
+    
+    
+    printf("Porcentual de Nulos: %.1f \n", (nulos * 100.0) / eleitores);
+    printf("Porcentual de Brancos: %.1f \n", (brancos * 100.0) / eleitores);
+    printf("Porcentual de Válidos: %.1f \n", (validos * 100.0) / eleitores);
+    
+
+    return 0;
+}
+
