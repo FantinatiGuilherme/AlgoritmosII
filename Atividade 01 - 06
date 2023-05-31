@@ -1,0 +1,40 @@
+/******************************************************************************
+
+Guilherme de Oliveira Fantinati
+
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+int main()
+{
+	setlocale(LC_ALL, "Portuguese");
+
+	int x, y, z;
+	char resposta;
+	
+	scanf("%d", &x);
+	scanf("%d", &y);
+	
+	z = (x*y) + 5;
+	
+	
+		if( z <= 0){
+			resposta = 'A';
+		}
+		
+		
+		if( z <= 100){
+			resposta = 'B';
+		}
+		
+	
+		else{
+			resposta = 'C';
+		}
+		
+		printf("Z = %d \nResposta = %c",z,resposta);
+	
+	return 0;
+}
+
