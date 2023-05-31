@@ -1,0 +1,31 @@
+/******************************************************************************
+
+-- Guilherme Fantinati - Algoritmos e Estruturas de Dados 2--
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main(){
+    int numeroVendas;
+    float salarioFixo, comissaoVenda, totalVendas, salarioFinal;
+    
+    printf("Quantos carros ele vendeu no mês?");
+    scanf("%d", &numeroVendas);
+    
+    printf("Qual é o salário fixo dele?");
+    scanf("%f", &salarioFixo);
+    
+    printf("Qual o valor total de suas vendas no mês?");
+    scanf("%f", &totalVendas);
+    
+    printf("Qual o valor da comissão por carro?");
+    scanf("%f", &comissaoVenda);
+    
+    salarioFinal = salarioFixo + (numeroVendas * comissaoVenda) + (totalVendas * 0.05) ;
+    
+    printf("O salário final do vendedor é %.2f",salarioFinal);
+}
+
+
+
+
