@@ -1,0 +1,27 @@
+/******************************************************************************
+
+Guilherme de Oliveira Fantinati
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    int posicao[10],cont, contPar = 0;
+    
+        printf("Digite 10 valores: \n");
+        
+    for (cont = 0; cont < 10; cont ++){
+        scanf("%d", &posicao[cont]);
+    }
+    
+    for (cont = 0; cont < 10; cont++){
+        if(posicao[cont] % 2 == 0){
+            contPar++;
+        }
+    }
+    
+    printf("\nTemos %d numeros pares", contPar);
+    return 0;
+}
+
