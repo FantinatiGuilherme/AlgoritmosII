@@ -1,0 +1,31 @@
+/******************************************************************************
+
+Guilherme de Oliveira Fantinati
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    int v1[15],v2[15],cont, QuantRepeticao = 0;
+    
+    printf("Digite os 15 numeros V1 : \n\n");
+    for(cont = 0 ; cont < 15 ; cont ++ ){
+        scanf("%d", &v1[cont]);
+    }
+    
+    printf("Digite os 15 numeros V2 : \n\n");
+    for(cont = 0 ; cont < 15 ; cont ++ ){
+        scanf("%d", &v2[cont]);
+    }
+
+    for (cont = 0; cont < 15; cont++){
+        if(v1[cont] == v2[cont]) {
+            QuantRepeticao += 1;
+        }
+    }
+    
+        printf("Os numeros se repetiram na mesma fileira %d vezes", QuantRepeticao);
+    
+    return 0;
+}
