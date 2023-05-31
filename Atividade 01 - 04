@@ -1,0 +1,33 @@
+/******************************************************************************
+
+Guilherme de Oliveira Fantinati - 
+
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+
+
+int main(){
+	
+	setlocale(LC_ALL, "Portuguese");
+
+	int QuantMaca = 0;
+	float valor1=1.00, valor2 = 1.30, resultado = 0;
+	
+		printf("Digite a quantidade de maças: \n");
+		scanf("%d", &QuantMaca);
+		
+		if(QuantMaca > 12){
+			
+			resultado = QuantMaca * valor1;
+		}
+		else{
+			resultado = QuantMaca * valor2;
+		}
+		
+		printf("Valor da compra de %d maças : %.2f", QuantMaca, resultado);
+		
+	return 0;
+}
+
