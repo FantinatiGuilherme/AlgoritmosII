@@ -1,0 +1,173 @@
+/******************************************************************************
+
+Guilherme de Oliveira Fantinati
+
+*******************************************************************************/
+#include <stdio.h>
+#include <string.h>
+
+#define TAMANHO 100
+
+typedef struct{
+    char nome[50];
+    char estilo[50];
+    int tamanho;
+    int rank;
+}BANDA;
+
+void leBanda(BANDA *v, int qt) {
+    for(int i = 0; i < qt; i++) {
+        
+        
+        printf("****************BANDA %d*******************\n", i+1);
+        printf("Nome da banda: ");
+        scanf("%s", v[i].nome);
+        
+        
+        printf("Estilo musical:");
+        scanf("%s", v[i].estilo);
+        
+        
+        printf("Quantidade de integrantes:");
+        scanf("%d", &v[i].tamanho);
+        
+        
+        printf("Rank da Banda ");
+        scanf("%d", &v[i].rank);
+        
+        
+        printf("***********************************\n");
+        
+        
+        if(v[i].rank > qt) {
+            printf("Digite um número entre 1 e %d\n", qt);
+            scanf("%d", &v[i].rank);
+        }
+    }
+}
+
+void buscaPorNome(BANDA *busca, int qt) {
+    char aux[50];
+    int achou = 0;
+    
+    
+    printf("Nome da banda que você deseja :");
+    scanf("%s", aux);
+    
+    
+    for(int i = 0; i < qt; i++) {
+        
+        if(strcmp(busca[i].nome, aux) == 0) {
+            
+            achou = 1;
+            printf("Nome: %s\n", busca[i].nome);
+            printf("Estilo da banda: %s\n", busca[i].estilo);
+            printf("Quantidade de integrantes: %d\n", busca[i].tamanho);
+            printf("Rank(Avaliação pessoal): %d\n", busca[i].rank);
+            
+        }
+    }
+    
+    
+    if(!achou) {
+        printf("Banda não encontrada...\n");
+    }
+}
+
+
+void buscaPorEstilo(BANDA *busca, int qt) {
+    
+    char aux[30];
+    int achou = 0;
+    
+    
+    printf("Qual estilo você quer procurar?\n");
+    scanf("%s", aux);
+    
+    
+    for(int i = 0; i < qt; i++) {
+        if(strcmp(busca[i].estilo, aux) == 0) {
+            
+            
+            achou = 1;
+            
+            
+            
+        
+            printf("***********************************\n");
+            printf("Nome da banda: %s\n", busca[i].nome);
+            printf("Estilo da banda: %s\n", busca[i].estilo);
+            printf("Quantidade de integrantes: %d\n", busca[i].tamanho);
+            printf("Rank: %d\n", busca[i].rank);
+            printf("***********************************\n");
+
+        }
+    }
+    if(!achou) {
+        printf("Estilo não encontrado...");
+    }
+}
+
+void listaBandas(BANDA *exib, int qt) {
+    for(int i = 0; i < qt; i++) {
+        
+        
+        
+        printf("***********************************\n");
+        printf("Nome da banda: %s\n", exib[i].nome);
+        printf("Estilo da banda: %s\n", exib[i].estilo);
+        printf("Quantidade de integrantes: %d\n", exib[i].tamanho);
+        printf("Rank: %d\n", exib[i].rank);
+        printf("***********************************\n");
+    }
+}
+
+void menu(){
+    BANDA v[TAMANHO];
+    int opcao = 0, qt;
+    do{
+        printf("\n\n-------------------------------------------------------------------------------------------------\n---------------------------------------- MENU DE TAREFAS ----------------------------------------\n1 - Ler Banda\n2 - Busca por Nome\n3 - Busca por estilo\n4 - Listar Bandas\n9 - Sair\n-------------------------------------------------------------------------------------------------\n");
+        scanf("%d", &opcao);
+
+        switch(opcao) {
+            case 1:
+                printf("Quantidade de bandas para serem cadastradas: \n");
+                scanf("%d", &qt);
+                leBanda(v, qt);
+                break;
+                
+                
+            case 2:
+                buscaPorNome(v, qt);
+                break;
+                
+                
+            case 3:
+                buscaPorEstilo(v, qt);
+                break;
+                
+                
+            case 4:
+                listaBandas(v, qt);
+                break;
+                
+                
+            case 9:
+                printf("Finalizando aplicação...");
+                break;
+                
+                
+            default:
+                printf("Número inválido, digite novamente!");
+                break;
+                
+                
+        }
+    } while(opcao != 9);
+}
+
+void main() {
+    menu();
+}
+
+
