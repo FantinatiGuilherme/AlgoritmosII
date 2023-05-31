@@ -1,0 +1,35 @@
+/******************************************************************************
+
+Guilherme de Oliveira Fantinati 
+
+*******************************************************************************/
+#include <stdio.h>
+#include <locale.h>
+
+int main()
+{
+setlocale(LC_ALL, "Portuguese");
+
+	float SalarioFixo, vendas, SalarioComissao, SalarioFinal, comissao1 = 0.03, comissao2 = 0.05;
+	
+		printf("Digite o salário fixo: \n");
+		scanf("%f", &SalarioFixo);
+		
+		printf("Digite o total de vendas: \n");
+		scanf("%f", &vendas);
+		
+		if(vendas > 1500){
+			
+			SalarioComissao = vendas * comissao2;
+		}
+		else{
+			SalarioComissao = vendas * comissao1;
+		}
+		
+		SalarioFinal = SalarioFixo + SalarioComissao;
+		
+		printf( "Salário Final : %.2f", SalarioFinal );
+		
+	return 0;
+}
+
